@@ -17,7 +17,11 @@ public List<Task> getAllTasks() {
     return repository.findAll();
     }
 
-    public Task getTaskById(Long id){
-    return repository.findById(id);
+    public Task getTask(final Long id){
+    return repository.findOne(id);
     }
+    public Task saveTask(final Task task) {
+    return repository.save(task);
+    }
+
 }
