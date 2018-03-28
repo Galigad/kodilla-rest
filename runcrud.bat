@@ -18,12 +18,10 @@ call %CATALINA_HOME%\bin\shutdown.bat
 copy build\libs\crud.war %CATALINA_HOME%\webapps
 if "%ERRORLEVEL%" == "0" goto runtomcat
 echo Cannot copy file
-gotofail
+goto fail
 
 :runtomcat
 call %CATALINA_HOME%\bin\startup.bat
-goto end
-
 goto end
 
 :fail
