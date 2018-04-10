@@ -25,6 +25,5 @@ public class TrelloController {
                 .filter(board -> board.getId() != null && board.getName() != null)
                 .filter(board -> board.getName().contains("Kodilla"))
                 .forEach(trelloBoardDto -> System.out.println(trelloBoardDto.getId() + " " + trelloBoardDto.getName()));
-gi
     }
 }
