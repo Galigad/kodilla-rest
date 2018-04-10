@@ -20,7 +20,7 @@ public class TrelloController {
     private TrelloClient trelloClient;
 
     @RequestMapping(method = RequestMethod.GET, value = "getTrelloBoards")
-    public void getTrelloBoards() {
+    public List<TrelloBoardDto> getTrelloBoards() {
 
         List<TrelloBoardDto> trelloBoards = trelloClient.getTrelloBoards();
 
@@ -35,6 +35,7 @@ public class TrelloController {
                                     " - " + trelloList.getId() +
                                     " - " + trelloList.isClosed()));
                 });
+        return trelloBoards;
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "createTrelloCard")
