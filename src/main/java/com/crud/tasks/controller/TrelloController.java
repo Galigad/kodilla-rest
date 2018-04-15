@@ -35,7 +35,7 @@ public class TrelloController {
                                     " - " + trelloList.getId() +
                                     " - " + trelloList.isClosed()));
                 });
-        return trelloBoards;
+        return trelloClient.getTrelloBoards();
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "createTrelloCard")
