@@ -17,6 +17,7 @@ public class TrelloService {
 
     @Autowired
     private AdminConfig adminConfig;
+
     @Autowired
     private TrelloClient trelloClient;
 
