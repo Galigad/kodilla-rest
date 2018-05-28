@@ -30,6 +30,7 @@ dependencies {
 	compile("org.projectlombok:lombok")
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-mail:2.0.1.RELEASE')
+	compile('com.google.code.gson:gson:2.8.2')
 
 
 	//SQL
