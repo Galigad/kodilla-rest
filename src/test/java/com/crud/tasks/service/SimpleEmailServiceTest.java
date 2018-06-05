@@ -28,7 +28,7 @@ public class SimpleEmailServiceTest {
 
         SimpleMailMessage mailMassage = new SimpleMailMessage();
         mailMassage.setTo(mail.getMailTo());
-        //mailMassage.setCc(mail.getToCc());
+        //mailMassage.setCc(templates.mail.getToCc());
         mailMassage.setSubject(mail.getSubject());
         mailMassage.setText(mail.getMessage());
 
