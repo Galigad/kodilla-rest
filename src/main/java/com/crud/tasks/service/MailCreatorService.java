@@ -22,7 +22,7 @@ public class MailCreatorService {
         context.setVariable("message", message);
         context.setVariable("task_url", "http://galigad.github.io");
         context.setVariable("button", "Visit website");
-        context.setVariable("admin_name", adminConfig.getAdminMail());
+        context.setVariable("admin_name", adminConfig.getAdminName());
         context.setVariable("app_name", adminConfig.getAppName());
         context.setVariable("company_name", adminConfig.getCompanyName());
         context.setVariable("company_adress", adminConfig.getAdminAdress());
