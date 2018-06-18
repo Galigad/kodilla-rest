@@ -57,4 +57,22 @@ public class SimpleEmailService {
         mailMessage.setText(mailCreatorService.buildTrelloCardEmail(mail.getMessage()));
         return mailMessage;
     }
+    public void sendScheduleMail(final Mail mail) {
+        LOGGER.info("Starting daily email preparation...");
+        try {
+            javaMailSender.send(createMimeMessage(mail));
+            LOGGER.info("Email has been sent");
+        } catch (MailException e) {
+            LOGGER.info("Failed to process email sending: " + e.getMessage(), e);
+        }
+    }
+
+    private MimeMessagePreparator createScheduleMimeMessage(final Mail mail) {
+        return mimeMessage -> {
+            MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
+            messageHelper.setTo(mail.getMailTo());
+            messageHelper.setSubject(mail.getSubject());
+            messageHelper.setText(mailCreatorService.buildTrelloScheduleMail(mail.getMessage()),true);
+        };
+    }
 }

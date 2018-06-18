@@ -27,7 +27,7 @@ public class EmailScheduler {
         long size = taskRepository.count();
         String task = size > 1 ? "tasks" : "task";
         if (size >= 1) {
-            simpleEmailService.send(new Mail(
+            simpleEmailService.sendScheduleMail(new Mail(
                     adminConfig.getAdminMail(),
                     SUBJECT,
                     "Currently in database you got: " + size + task)
