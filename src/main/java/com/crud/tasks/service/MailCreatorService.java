@@ -51,7 +51,7 @@ public class MailCreatorService {
         Context context = new Context();
         context.setVariable("message", message);
         context.setVariable("task_url", "http://galigad.github.io");
-        context.setVariable("button", emailScheduler.taskRepositorySize());
+        context.setVariable("button", "Visit website");
         context.setVariable("show_button", true);
         context.setVariable("is_friend", false);
         context.setVariable("admin_config", adminConfig);

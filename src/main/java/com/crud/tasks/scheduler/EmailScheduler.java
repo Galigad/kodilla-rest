@@ -22,8 +22,7 @@ public class EmailScheduler {
 
     private static final String SUBJECT = "Task: Once a day email";
 
-    //@Scheduled(cron = "0 0 10 * * *")
-    @Scheduled(fixedDelay = 10000)
+    @Scheduled(cron = "0 0 10 * * *")
     public void sendInformationEmail() {
         long size = taskRepository.count();
         String task = size > 1 ? "tasks" : "task";
@@ -34,10 +33,5 @@ public class EmailScheduler {
                     "Currently in database you got: " + size + " " + task)
             );
         }
-    }
-
-    public String taskRepositorySize() {
-        String size = String.valueOf(taskRepository.count());
-        return size;
     }
 }
