@@ -31,13 +31,13 @@ public class EmailScheduler {
             simpleEmailService.sendScheduleMail(new Mail(
                     adminConfig.getAdminMail(),
                     SUBJECT,
-                    "Currently in database you got: " + size + task)
+                    "Currently in database you got: " + size + " " + task)
             );
         }
     }
 
-    public long taskRepositorySize() {
-        long size = taskRepository.count();
+    public String taskRepositorySize() {
+        String size = String.valueOf(taskRepository.count());
         return size;
     }
 }
