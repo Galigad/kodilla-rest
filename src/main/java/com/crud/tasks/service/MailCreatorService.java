@@ -1,6 +1,7 @@
 package com.crud.tasks.service;
 
 import com.crud.tasks.config.AdminConfig;
+import com.crud.tasks.scheduler.EmailScheduler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,8 @@ public class MailCreatorService {
 
     @Autowired
     private AdminConfig adminConfig;
+
+    private EmailScheduler emailScheduler;
 
     @Autowired
     @Qualifier("templateEngine")
@@ -47,7 +50,7 @@ public class MailCreatorService {
         Context context = new Context();
         context.setVariable("message", message);
         context.setVariable("task_url", "http://galigad.github.io");
-        context.setVariable("button", "Check task list");
+        context.setVariable("button", emailScheduler.taskRepositorySize());
         context.setVariable("show_button", true);
         context.setVariable("is_friend", false);
         context.setVariable("admin_config", adminConfig);
