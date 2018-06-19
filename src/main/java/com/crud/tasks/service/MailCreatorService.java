@@ -17,6 +17,7 @@ public class MailCreatorService {
     @Autowired
     private AdminConfig adminConfig;
 
+    @Autowired
     private EmailScheduler emailScheduler;
 
     @Autowired
